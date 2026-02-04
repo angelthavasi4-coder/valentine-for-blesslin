@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine? 💕</title>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=DM+Sans:wght@400;500;700&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Floating hearts background -->
+    <div class="bg-hearts" id="bgHearts"></div>
+
+    <!-- Background Music -->
+    <audio id="backgroundMusic" loop preload="auto" volume="1.0">
+        <source src="./background-music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Music Control Button -->
+    <div class="music-control" id="musicControl" onclick="toggleMusic()">🎵</div>
+
+    <!-- Cute doodles -->
+    <div class="doodle doodle-1">💖</div>
+    <div class="doodle doodle-2">💕</div>
+    <div class="doodle doodle-3">✨</div>
+    <div class="doodle doodle-4">💝</div>
+    <div class="doodle doodle-5">🌸</div>
+    <div class="doodle doodle-6">💗</div>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Hey Blesslin! 💕</h1>
+            <p>Will you be my Valentine? ✨</p>
+            
+            <div class="button-container" id="buttonContainer">
+                <button class="btn btn-yes" id="yesBtn">YES! 😍</button>
+                <button class="btn btn-no" id="noBtn">No 😢</button>
+            </div>
+        </section>
+
+        <!-- Success Section (Hidden initially) -->
+        <section class="success-section" id="successSection">
+            <div class="heart-explosion">💖💕💗💝💘</div>
+            <h2>YAAAY! You made me the happiest! 🎉</h2>
+            <p style="font-size: 1.3rem; margin: 20px 0;">I promise to make every moment special! 💕</p>
+        </section>
+
+        <!-- Love Letter -->
+        <section class="love-letter">
+            <h3>A Letter Just For You 💌</h3>
+            <div class="envelope" id="envelope">
+                <div class="envelope-base">
+                    <div class="envelope-flap"></div>
+                    <div class="letter">
+                        <div class="letter-content">
+                            <p><strong>Bless baby, 💖</strong></p>
+                            <p>From the moment you came into my life, everything felt a little brighter, warmer, and happier ✨. You are not just my fiancé – you are my safe place 🤗, my best friend 💑, and the most beautiful part of my everyday life 🌍.</p>
+                            <p>Every small moment with you becomes special 💫 – our silly talks 😄, random laughs 😂, little fights 🙈, and even the quiet times where we just sit together without saying anything 🥹. With you, I have learned what true love feels like ❤️.</p>
+                            <p>Thank you for loving me the way you do 💞, for understanding me even when I don't say much 🫶, and for always making me feel cared for and chosen 🥰. I never imagined I could be this happy until you became mine 💍.</p>
+                            <p>This little website is just a small way of showing how much you mean to me 🎁. No matter where life takes us, I know one thing for sure – I always want to walk that path holding your hand 🤝💖.</p>
+                            <p>Happy Valentine's Day to the man who owns my heart completely 💘.</p>
+                            <p>I love you today, tomorrow, and forever ❤️♾️</p>
+                            <p><strong>With all my love,</strong><br>Your Baby Girl Angel 😘💕</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align: center; color: var(--coral); font-style: italic;">Click the envelope to open! 💌</p>
+        </section>
+
+        <!-- Photo Memories -->
+        <section>
+            <h3 style="font-family: 'Righteous', cursive; font-size: 2.5rem; color: var(--soft-red); text-align: center; margin-bottom: 40px;">Our Special Moments 📸</h3>
+            <p style="text-align: center; color: var(--coral); margin-bottom: 30px; font-size: 1.1rem;">Click each photo to reveal our memories! ✨</p>
+            <div class="photos-grid">
+                <div class="photo-card" onclick="revealPhotoInCard(this)">
+                    <div class="photo-placeholder">📷</div>
+                    <img src="./photo1.jpg" alt="Unforgettable Day">
+                    <p class="photo-caption">Unforgettable Day 💕</p>
+                    <div class="photo-quote">Every moment with you is a treasure I hold close to my heart. 💕</div>
+                </div>
+                <div class="photo-card" onclick="revealPhotoInCard(this)">
+                    <div class="photo-placeholder">📷</div>
+                    <img src="./photo2.jpg" alt="Best Day Ever">
+                    <p class="photo-caption">Best Day Ever 🌟</p>
+                    <div class="photo-quote">With you, every ordinary day becomes the best day of my life. 🌟</div>
+                </div>
+                <div class="photo-card" onclick="revealPhotoInCard(this)">
+                    <div class="photo-placeholder">📷</div>
+                    <img src="./photo3.jpg" alt="Making Memories">
+                    <p class="photo-caption">Making Memories 💖</p>
+                    <div class="photo-quote">Creating beautiful memories with you is my favorite adventure. 💖</div>
+                </div>
+                <div class="photo-card" onclick="revealPhotoInCard(this)">
+                    <div class="photo-placeholder">📷</div>
+                    <img src="./photo4.jpg" alt="Made For Each Other">
+                    <p class="photo-caption">Made For Each Other 💑</p>
+                    <div class="photo-quote">You and me, we're perfectly made for each other. Forever and always. 💑</div>
+                </div>
+                <div class="photo-card" onclick="revealPhotoInCard(this)">
+                    <div class="photo-placeholder">📷</div>
+                    <img src="./photo5.jpg" alt="Fun Times Together">
+                    <p class="photo-caption">Fun Times Together 😄</p>
+                    <div class="photo-quote">Life is better when we're laughing together. You make every moment fun! 😄</div>
+                </div>
+                <div class="photo-card" onclick="revealPhotoInCard(this)">
+                    <div class="photo-placeholder">📷</div>
+                    <img src="./photo6.jpg" alt="Perfect Together">
+                    <p class="photo-caption">Perfect Together 💫</p>
+                    <div class="photo-quote">Standing by your side, I know we can face anything together. You complete me. 💫</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Date Ideas -->
+        <section class="date-ideas">
+            <h3>Our Future Adventures 🌟</h3>
+            <div class="date-grid">
+                <div class="date-item">
+                    <div class="icon">🍕</div>
+                    <h4>Dinner Date</h4>
+                    <p>Your favorite restaurant!</p>
+                </div>
+                <div class="date-item">
+                    <div class="icon">🎬</div>
+                    <h4>Movie Night</h4>
+                    <p>Popcorn & cuddles</p>
+                </div>
+                <div class="date-item">
+                    <div class="icon">🌅</div>
+                    <h4>Sunrise/Sunset</h4>
+                    <p>Beautiful views together</p>
+                </div>
+                <div class="date-item">
+                    <div class="icon">🎨</div>
+                    <h4>Creative Date</h4>
+                    <p>Paint, cook, or craft!</p>
+                </div>
+                <div class="date-item">
+                    <div class="icon">🌳</div>
+                    <h4>Nature Walk</h4>
+                    <p>Fresh air & good talks</p>
+                </div>
+                <div class="date-item">
+                    <div class="icon">🎮</div>
+                    <h4>Game Night</h4>
+                    <p>Let's play together!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Easter Eggs -->
+        <section class="easter-eggs">
+            <h3>Find The Hidden Surprises! 🥚</h3>
+            <p style="margin-bottom: 20px; color: var(--text);">Click each egg to reveal a special message!</p>
+            <div class="egg-container">
+                <div class="egg" onclick="toggleSurprise(1)"></div>
+                <div class="egg" onclick="toggleSurprise(2)"></div>
+                <div class="egg" onclick="toggleSurprise(3)"></div>
+            </div>
+            <div class="surprise-message" id="surprise1">You're the most amazing person I know! 🌟</div>
+            <div class="surprise-message" id="surprise2">Your smile makes everything better! 😊</div>
+            <div class="surprise-message" id="surprise3">I'm so lucky to have you! 💖</div>
+        </section>
+
+        <!-- Final Confirmation -->
+        <section class="final-question">
+            <h3>So... Are You Ready? 💝</h3>
+            <p style="color: white; font-size: 1.2rem; margin-bottom: 30px;">Let's make this Valentine's Day unforgettable!</p>
+            
+            <div class="final-buttons">
+                <button class="btn btn-yes" onclick="showConsequence()">Absolutely! 💕</button>
+                <button class="btn btn-no-2" id="noBtn2">Maybe not...</button>
+            </div>
+
+            <div class="consequence-msg" id="consequenceMsg">
+                Perfect! Get ready for an amazing day filled with love, laughter, and unforgettable moments! 🎊💕
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            Made with love by<br>
+            Your Angel Gundu <span>❤️</span>
+            <br><br>
+            <small>P.S. You're the best thing that's ever happened to me, Blesslin! 😊</small>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
